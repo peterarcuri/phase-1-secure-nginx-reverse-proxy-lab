@@ -48,17 +48,35 @@ def validate_nginx_configs(config_dir="config"):
 if __name__ == "__main__":
     results = validate_nginx_configs()
 
+    report_lines = []
+
     if results["passed"]:
-        print("PASS: Secure Nginx configuration validated.")
+        report_lines.append(
+            "PASS: Secure Nginx configuration validated."
+        )
     else:
-        print("FAIL: Missing security controls detected.")
+        report_lines.append(
+            "FAIL: Missing security controls detected."
+        )
 
         if results["missing_headers"]:
-            print("\nMissing Security Headers:")
+            report_lines.append("\nMissing Security Headers:")
+
             for header in results["missing_headers"]:
-                print(f"- {header}")
+                report_lines.append(f"- {header}")
 
         if results["missing_directives"]:
-            print("\nMissing Directives:")
+            report_lines.append("\nMissing Directives:")
+
             for directive in results["missing_directives"]:
-                print(f"- {directive}")
+                report_lines.append(f"- {directive}")
+
+    report_text = "\n".join(report_lines)
+
+    print(report_text)
+
+    with open(
+        "sample-output/sample-validation-output.txt",
+        "w"
+    ) as report_file:
+        report_file.write(report_text)
