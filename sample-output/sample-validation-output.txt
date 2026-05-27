@@ -1,1 +1,4 @@
-PASS: Secure Nginx configuration validated.
+FAIL: Missing security controls detected.
+
+Missing Security Headers:
+- X-Frame-Options

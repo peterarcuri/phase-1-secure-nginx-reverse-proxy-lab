@@ -49,6 +49,18 @@ The lab focuses on:
 
 ---
 
+# Technologies Used
+
+- Python
+- Flask
+- Nginx
+- Pytest
+- OpenSSL
+- Linux
+- VS Code
+
+---
+
 # Project Structure
 
 ```text
@@ -134,3 +146,121 @@ This project will eventually integrate with:
 - Monitoring & observability stacks
 
 to simulate enterprise-grade DevSecOps workflows.
+
+---
+
+# Setup & Usage
+
+## Create Virtual Environment
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+## Install Dependencies
+
+```bash
+pip install flask pytest
+```
+
+## Run Flask Backend
+
+```bash
+python src/app.py
+```
+
+## Run Security Validator
+
+```bash
+python src/nginx_config_validator.py
+```
+
+## Run Tests
+
+```bash
+python -m pytest
+```
+
+## Generate Self-Signed Certificates
+
+```bash
+python src/generate_self_signed_cert.py
+```
+
+---
+
+# Skills Demonstrated
+
+- Reverse proxy configuration
+- TLS/SSL security
+- HTTP hardening
+- Rate limiting
+- Secure proxy forwarding
+- Python automation
+- Security validation
+- DevSecOps fundamentals
+- Linux system administration
+- Infrastructure security
+
+---
+
+# Screenshots
+
+## Project Structure
+
+![Project Structure](screenshots/01-project-structure.png)
+
+---
+
+## Virtual Environment
+
+![Virtual Environment](screenshots/02-virtual-environment.png)
+
+---
+
+## Flask Backend Running
+
+![Flask Backend Running](screenshots/03-flask-backend-running.png)
+
+---
+
+## Backend Response
+
+![Backend Response](screenshots/04-flask-backend-response.png)
+
+---
+
+## Nginx Validation Passed
+
+![Nginx Validation Passed](screenshots/05-nginx-validation-pass.png)
+
+---
+
+## Pytest Passed
+
+![Pytest Passed](screenshots/06-pytest-pass.png)
+
+---
+
+## Self-Signed Certificate Generated
+
+![Self-Signed Certificate Generated](screenshots/07-self-signed-cert-generated.png)
+
+---
+
+## Security Headers Configuration
+
+![Security Headers Configuration](screenshots/08-security-headers-config.png)
+
+---
+
+## Reverse Proxy Configuration
+
+![Reverse Proxy Configuration](screenshots/09-reverse-proxy-config.png)
+
+---
+
+## Failed Validation Demo
+
+![Failed Validation Demo](screenshots/10-failed-validation-demo.png)
